@@ -27,29 +27,21 @@ const Planets = () => {
   // Parameter two: async function to be ran
   const { data, status } = useQuery(['planets', page], () => fetchPlanets(page));
 
-  const buttons = [
-    { text: 'Page 1', onClick: () => setPage(1) },
-    { text: 'Page 2', onClick: () => setPage(2) },
-    { text: 'Page 3', onClick: () => setPage(3) },
-  ];
-
-  console.log(data);
-
   return (
     <Box>
       <Navbar />
       <Box px={['1em', '3em', '20em']} pt='7em'>
-        <Heading size='lg' mb={5}>Planets</Heading>
+        <Heading size='xl' mb={5}>Planets</Heading>
         <Flex justify='space-between' mb={5}>
-          {buttons.map((button, index) => 
-            <Button 
-              key={index}
+        {[1, 2, 3, 4, 5, 6].map((number) => (
+            <Button
+              key={number}
               colorScheme='teal'
-              onClick={button.onClick}
+              onClick={() => setPage(number)}
             >
-              {button.text}
+              Page {number}
             </Button>
-          )}
+          ))}
         </Flex>
 
         {status === 'loading' && (

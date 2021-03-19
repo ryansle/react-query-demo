@@ -25,25 +25,19 @@ const People = () => {
   const [page, setPage] = useState(1);
   const { data, status } = useQuery(['people', page], () => fetchPeople(page));
 
-  const buttons = [
-    { text: 'Page 1', onClick: () => setPage(1) },
-    { text: 'Page 2', onClick: () => setPage(2) },
-    { text: 'Page 3', onClick: () => setPage(3) },
-  ];
-
   return (
     <Box>
       <Navbar />
       <Box px={['1em', '3em', '20em']} pt='7em'>
-        <Heading size='lg' mb={5}>People</Heading>
+        <Heading size='xl' mb={5}>People</Heading>
         <Flex justify='space-between' mb={5}>
-          {buttons.map((button, index) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
             <Button
-              key={index}
+              key={number}
               colorScheme='teal'
-              onClick={button.onClick}
+              onClick={() => setPage(number)}
             >
-              {button.text}
+              Page {number}
             </Button>
           ))}
         </Flex>
