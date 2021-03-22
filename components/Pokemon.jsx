@@ -8,16 +8,17 @@ import {
   Tag 
 } from '@chakra-ui/react';
 
-const Pokemon = ({ id, name, sprite, types }) => {
+const Pokemon = ({ id, name, sprite, types, ...rest }) => {
   const typeNames = types.map((typeObject) => typeObject.type.name)
 
   return (
     <Box 
-      width='15%'
+      width={['50%', null, '15%']}
       borderRadius={10} 
       borderWidth='1px' 
       p={5}
       mb={5}
+      {...rest}
     >
       <Image 
         src={sprite} 
