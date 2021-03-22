@@ -4,6 +4,7 @@ import Navbar from '../components/Navigation/Navbar';
 import ParallelQueries from '../components/Demos/ParallelQueries';
 import DisablePauseQueries from '../components/Demos/DisablePauseQueries';
 import GlobalizedSettings from '../components/Demos/GlobalizedSettings';
+import Redux from '../components/Demos/Redux';
 
 // Utilities
 import Head from 'next/head';
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <Box>
       <Navbar />
-      <Box px={['1em', '3em', '20em']} pt='7em'>
+      <Box px={['1em', '3em', '20em']} pt='7em' mb='300px'>
         <Head>
           <title>React-Query Demo</title>
           <link rel='icon' href='/favicon.ico' />
@@ -30,9 +31,6 @@ const Home = () => {
         <GlobalizedSettings />
         <Divider my={10} />
 
-        {/* keepPreviousData */}
-        <Divider my={10} />
-
         {/* Infinite scrolling with Infinite Queries */}
         <Divider my={10} />
 
@@ -40,7 +38,7 @@ const Home = () => {
         <Divider my={10} />
 
         {/* Redux */}
-        <Divider my={10} />
+        <Redux />
       </Box>
     </Box>
   );
