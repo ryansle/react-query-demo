@@ -3,6 +3,7 @@ import { Box, Heading, Divider, } from '@chakra-ui/react';
 import Navbar from '../components/Navigation/Navbar';
 import ParallelQueries from '../components/Demos/ParallelQueries';
 import DisablePauseQueries from '../components/Demos/DisablePauseQueries';
+import GlobalizedSettings from '../components/Demos/GlobalizedSettings';
 
 // Utilities
 import Head from 'next/head';
@@ -24,16 +25,22 @@ const Home = () => {
         {/* Disable/Pause Queries & Manual Refresh */}
         <DisablePauseQueries />
         <Divider my={10} />
-        
+
         {/* Globalized query settings */}
+        <GlobalizedSettings />
+        <Divider my={10} />
 
         {/* keepPreviousData */}
+        <Divider my={10} />
 
-        {/* Infinte scrolling with Infinite Queries */}
+        {/* Infinite scrolling with Infinite Queries */}
+        <Divider my={10} />
 
         {/* Mutations */}
+        <Divider my={10} />
 
         {/* Redux */}
+        <Divider my={10} />
       </Box>
     </Box>
   );
