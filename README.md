@@ -1,8 +1,28 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# React Query
+
+React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes **fetching, caching, synchronizing and updating server state** in your React applications a breeze.
+
+## Features
+
+### Declarative & Automatic
+
+Writing your data fetching logic by hand is over. Tell React Query where to get your data and how fresh you need it to be and the rest is automatic. React Query handles caching, background updates and stale data out of the box with zero-configuration.
+
+### Simple & Familiar
+
+If you know how to work with promises or async/await, then you already know how to use React Query. There's no global state to manage, reducers, normalization systems or heavy configurations to understand. Simply pass a function that resolves your data (or throws an error) and the rest is history.
+
+### Powerful & Configurable
+
+React Query is configurable down to each observer instance of a query with knobs and options to fit every use-case. It comes wired up with dedicated devtools, infinite-loading APIs, and first class mutation tools that make updating your data a breeze. Don't worry though, everything is pre-configured for success!
+
 ## Getting Started
 
-First, run the development server:
+First, run an `npm install` to install all the necessary dependencies.
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +32,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Purpose
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This boilerplate application was put together to demonstrate some of React Query's fetching and caching capabilities in requesting data from an API. Needless to say, it excelled in both of these areas and was able to greatly improve an application's speed by having configurable options for forced rerenders, cached data time, and more.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In some cases, React Query can replace a variety of other global state managers including Redux and MobX - and for the vast majority of applications, the truly **globally accessible client state** that is left over after migrating all of your async code to React Query is usually very tiny.
 
-## Learn More
+The main difference, however, is that React Query is a **server-state** library that is responsible for managing asynchronous operations between your server and client. Redux, MobX, Recoil and others are **client-state** libraries that _can be used to store asynchronous data, albeit inefficiently when compared to a tool like React Query._
 
-To learn more about Next.js, take a look at the following resources:
+## Dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js
+- Chakra UI
+- Emotion
+- Framer Motion
+- React Query

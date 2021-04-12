@@ -11,7 +11,7 @@ const fetchPokemonById = async (id) => {
 };
 
 const ParallelQueries = () => {
-  const starters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const starters = [...Array(13).keys()].filter((num) => num !== 0);
 
   const pokemonQueries = useQueries(
     starters.map(id => {
@@ -22,6 +22,8 @@ const ParallelQueries = () => {
     })
   );
 
+  console.log(pokemonQueries);
+
   return (
     <Box>
       <Heading size='lg' mb={5}>Parallel Queries</Heading>
@@ -31,7 +33,7 @@ const ParallelQueries = () => {
       </Text>
       <Text fontSize='lg' mb={5}>
         Pictured below, I am making 12 asynchronous queries to a REST API to pull
-        the first 12 pokemon. Notice how fast it is compared to the Carholder Portal,
+        the first 12 pokemon. Notice how fast it is compared to the Cardholder Portal,
         which forces us to wait until all data can be loaded in before displaying anything.
       </Text>
       <Flex justify='space-around' wrap='wrap' mb={5}>
@@ -52,6 +54,10 @@ const ParallelQueries = () => {
         <Code>query</Code> object, holding fields such as the query's status,
         the number of attempts made, time it will remain cached for, and time
         it will be marked as stale for (to know when it should attempt to refresh).
+      </Text>
+      <Text fontSize='lg' mb={5}>
+        By the way, just for fun, I also tried this on <b>all 893</b> pokemon. I wouldn't recommend it.
+        It probably took a good minute or two to grab everything, and it froze the page up a few times.
       </Text>
     </Box>
   )

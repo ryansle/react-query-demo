@@ -32,10 +32,10 @@ const Home = () => {
         <Divider my={10} />
 
         {/* Infinite scrolling with Infinite Queries */}
-        <Divider my={10} />
+        {/* <Divider my={10} /> */}
 
         {/* Mutations */}
-        <Divider my={10} />
+        {/* <Divider my={10} /> */}
 
         {/* Redux */}
         <Redux />
